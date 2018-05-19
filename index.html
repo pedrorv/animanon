@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/buttons.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.2.4/fabric.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Animanon</title>
 </head>
 
@@ -18,37 +20,41 @@
       <img src="img/logo.png" />
     </a>
     <div class="header-buttons">
-      <div class="btn btn-header">
+      <div class="btn btn-header" id='a-save'>
         <p>Save</p>
         <i class="fa fa-download"></i>
       </div>
-      <div class="btn btn-header">
+      <div class="btn btn-header" id='a-open'>
         <p>Open</p>
         <i class="fa fa-upload"></i>
-        <input id="open" type="file" style="display: none;" />
+        <input id="open" type="file" />
       </div>
     </div>
   </header>
   <main id="app">
     <aside id="tools">
       <aside id="tool-picker">
-        <div class="btn btn-tool">
+        <div class="btn btn-tool active" id="a-select">
+          <i class="fa fa-mouse-pointer"></i>
+          <p>select</p>
+        </div>
+        <div class="btn btn-tool" id="a-text">
           <i class="fa fa-font"></i>
           <p>text</p>
         </div>
-        <div class="btn btn-tool">
+        <div class="btn btn-tool" id="a-shape">
           <i class="fa fa-circle"></i>
           <p>shapes</p>
         </div>
-        <div class="btn btn-tool">
+        <div class="btn btn-tool" id="a-image">
           <i class="fa fa-picture-o"></i>
           <p>images</p>
         </div>
-        <div class="btn btn-tool">
+        <div class="btn btn-tool" id="a-draw">
           <i class="fa fa-pencil"></i>
           <p>draw</p>
         </div>
-        <div class="btn btn-tool">
+        <div class="btn btn-tool" id="a-rec">
           <i class="fa fa-microphone"></i>
           <p>REC</p>
         </div>
@@ -58,18 +64,12 @@
     <main id="canvas-container">
       <header id="tool-config"></header>
       <main id="canvas-area">
-        <canvas id="c" width="800" height="600"></canvas>
+        <canvas id="c" width="800" height="450" style="border: 1px solid #444;"></canvas>
       </main>
     </main>
     <footer id="timeline"></footer>
   </main>
-
-  <button id="draw">Cancel drawing mode</button>
-  <button id="clear">Clear Canvas</button>
-  <button id="download">Download project</button>
-
 </body>
-<script src="js/fabric.js"></script>
 <script src="js/main.js"></script>
 
 </html>

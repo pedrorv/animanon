@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 header#main-header {
   display: flex;
   padding: 10px 20px;
@@ -14,10 +19,6 @@ header#main-header {
   background: #00ae73;
   display: flex;
   flex-wrap: wrap;
-}
-
-canvas {
-  background: #fff;
 }
 
 a.logo {
@@ -41,6 +42,8 @@ a.logo img {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #fff;
+  padding: 20px;
 }
 
 #timeline {

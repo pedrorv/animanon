@@ -4,6 +4,7 @@ div.header-buttons {
 }
 
 .btn {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +16,8 @@ div.header-buttons {
 }
 
 .btn:hover,
-.btn:active {
+.btn:active,
+.btn.active {
   background: #009361;
 }
 
@@ -54,4 +56,16 @@ div.header-buttons {
 
 .btn-tool i {
   font-size: 24px;
+}
+
+.btn input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  font-size: 100px;
+}
+
+.btn label {
+  cursor: pointer;
 }
