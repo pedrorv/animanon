@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 header#main-header {
   display: flex;
-  padding: 15px 20px;
+  padding: 10px 20px;
   align-items: center;
   background: #008056;
   flex-direction: row;
@@ -8,6 +12,12 @@ header#main-header {
 
 #app {
   background: #00ae73;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+canvas {
+  background: #fff;
 }
 
 a.logo {
@@ -18,4 +28,34 @@ a.logo {
 
 a.logo img {
   height: 40px;
+}
+
+#tools {
+  flex-basis: 35%;
+  border: 2px solid #fff;
+  display: flex;
+}
+
+#canvas-container {
+  flex-basis: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timeline {
+  flex-basis: 100%;
+}
+
+#tool-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2px solid #fff;
+}
+
+#tool-properties {
+  display: flex;
+  flex-grow: 1;
+  border: 2px solid #fff;
 }
