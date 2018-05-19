@@ -1,0 +1,57 @@
+div.header-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00ae73;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover,
+.btn:active {
+  background: #009361;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-header {
+  flex-direction: row;
+  min-height: 40px;
+  min-width: 80px;
+  margin-right: 5px;
+}
+
+.btn-tool {
+  flex-direction: column;
+  height: 80px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn p {
+  font-size: 14px;
+  color: #fff;
+  margin-right: 7px;
+}
+
+.btn-tool p {
+  margin: 0;
+}
+
+.btn i {
+  color: #fff;
+}
+
+.btn-tool i {
+  font-size: 24px;
+}

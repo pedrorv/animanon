@@ -1,0 +1,21 @@
+header#main-header {
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  background: #008056;
+  flex-direction: row;
+}
+
+#app {
+  background: #00ae73;
+}
+
+a.logo {
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+a.logo img {
+  height: 40px;
+}

@@ -5,15 +5,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/buttons.css">
   <title>Animanon</title>
 </head>
 
-<body>
-  <canvas id="c" width="800" height="600"></canvas>
+<body id="animanon">
+  <header id="main-header">
+    <a href="https://pedrorv.github.io/animation/" class="logo">
+      <img src="img/logo.png" />
+    </a>
+    <div class="header-buttons">
+      <div class="btn btn-header">
+        <p>Save</p>
+        <i class="fa fa-download"></i>
+      </div>
+      <div class="btn btn-header">
+        <p>Open</p>
+        <i class="fa fa-upload"></i>
+        <input id="open" type="file" style="display: none;" />
+      </div>
+    </div>
+  </header>
+  <main id="app">
+    <aside id="tools">
+      <aside id="tool-picker">
+        <div class="btn btn-tool">
+          <i class="fa fa-font"></i>
+          <p>text</p>
+        </div>
+        <div class="btn btn-tool">
+          <i class="fa fa-circle"></i>
+          <p>shapes</p>
+        </div>
+        <div class="btn btn-tool">
+          <i class="fa fa-picture-o"></i>
+          <p>images</p>
+        </div>
+        <div class="btn btn-tool">
+          <i class="fa fa-pencil"></i>
+          <p>draw</p>
+        </div>
+        <div class="btn btn-tool">
+          <i class="fa fa-microphone"></i>
+          <p>REC</p>
+        </div>
+      </aside>
+      <main id="tool-properties"></main>
+    </aside>
+    <main id="canvas-container">
+      <header id="tool-config"></header>
+      <main id="canvas-area">
+        <canvas id="c" width="800" height="600"></canvas>
+      </main>
+    </main>
+    <footer id="timeline"></footer>
+  </main>
+
   <button id="draw">Cancel drawing mode</button>
   <button id="clear">Clear Canvas</button>
   <button id="download">Download project</button>
-  <input id="open" type="file" />
+
 </body>
 <script src="js/fabric.js"></script>
 <script src="js/main.js"></script>
