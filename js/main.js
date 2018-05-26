@@ -57,6 +57,10 @@ const Animanon = (function() {
     download(JSON.stringify(canvas), "project.json", "text/plain");
   });
 
+  openButton.on('click', function(event) {
+    openFile.click();
+  });
+
   openFile.on("change", function(e) {
     const files = e.target.files[0];
     const reader = new FileReader();
