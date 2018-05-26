@@ -62,3 +62,11 @@ a.logo img {
   flex-grow: 1;
   border: 2px solid #fff;
 }
+
+div.tool-props {
+  display: none;
+}
+
+div.tool-props.active {
+  display: block;
+}
