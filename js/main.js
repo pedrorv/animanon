@@ -35,7 +35,6 @@ const Animanon = (function() {
 
       if (id === tool.attr("id")) {
         tool.addClass("active");
-        console.log(id);
         $("#" + id + "-props").addClass("active");
         return;
       }
