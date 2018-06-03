@@ -1,3 +1,5 @@
+import shapesPath from "./shapes.js";
+
 const Animanon = (function() {
   const canvas = new fabric.Canvas("c", {
     isDrawingMode: false,
@@ -11,13 +13,17 @@ const Animanon = (function() {
   const saveButton = $("#a-save");
   const openButton = $("#a-open");
   const textButton = $("#a-text");
+  const shapeButton = $("#a-shape");
   const textAddButton = $("#a-text-add");
   const selectButton = $("#a-select");
   const openFile = $("#open");
 
-  const toolButtons = [drawButton, selectButton, textButton].forEach(function(
-    button
-  ) {
+  const toolButtons = [
+    drawButton,
+    selectButton,
+    textButton,
+    shapeButton
+  ].forEach(function(button) {
     button.on("click", function() {
       changeTool($(this).attr("id"));
     });
