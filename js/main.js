@@ -69,6 +69,26 @@ const Animanon = (function() {
     canvas.isDrawingMode = false;
   });
 
+  shapeButton.on("click", function(event) {
+    canvas.isDrawingMode = false;
+  });
+
+  $("img.shape").each(function() {
+    const img = $(this).on("click", function() {
+      const shape = $(this)
+        .attr("id")
+        .split("a-shape-")[1];
+
+      const path = new fabric.Path(shapesPath[shape], {
+        fill: "#000",
+        originX: "left",
+        originY: "top"
+      });
+
+      canvas.add(path);
+    });
+  });
+
   textAddButton.on("click", function(event) {
     const input = $("#a-text-value");
     if (!input.val()) return;
