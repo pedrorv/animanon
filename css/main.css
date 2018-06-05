@@ -109,3 +109,14 @@ div.shape-container img.shape {
 div.shape-container img.shape:active {
   transform: scale(0.95);
 }
+
+div.draw-config {
+  margin: 10px;
+}
+
+label {
+  color: #fff;
+  font-size: 14px;
+  margin-right: 5px;
+  font-family: sans-serif;
+}

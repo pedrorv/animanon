@@ -17,6 +17,8 @@ const Animanon = (function() {
   const textAddButton = $("#a-text-add");
   const selectButton = $("#a-select");
   const openFile = $("#open");
+  const drawColorInput = $("#a-draw-color");
+  const drawWidthInput = $("#a-draw-width");
 
   const toolButtons = [
     drawButton,
@@ -58,6 +60,13 @@ const Animanon = (function() {
 
   drawButton.on("click", function(event) {
     canvas.isDrawingMode = true;
+  });
+
+  drawColorInput.on("input", function(event) {
+    canvas.freeDrawingBrush.color = drawColorInput.val();
+  });
+  drawWidthInput.on("input", function(event) {
+    canvas.freeDrawingBrush.width = parseInt(drawWidthInput.val(), 10) || 1;
   });
 
   selectButton.on("click", function(event) {
