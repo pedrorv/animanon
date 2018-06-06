@@ -61,6 +61,16 @@
       </aside>
       <main id="tool-properties">
         <div class="tool-props" id="a-select-props">
+          <div class="select-prop draw">
+            <div class="draw-config">
+              <label for="stroke">Stroke</label>
+              <input id="a-draw-stroke" type="color" name="stroke" value="#000000">
+            </div>
+            <div class="draw-config">
+              <label for="stroke-width">Stroke width</label>
+              <input id="a-draw-stroke-width" type="range" min="1" max="100" step="1" value="1" name="stroke-width">
+            </div>
+          </div>
           <div class="select-prop shape">
             <div class="draw-config">
               <label for="fill">Fill</label>
@@ -72,7 +82,7 @@
             </div>
             <div class="draw-config">
               <label for="stroke-width">Stroke width</label>
-              <input id="a-shape-stroke-width" type="range" min="0" max="100" step="1" value="1" name="stroke-width">
+              <input id="a-shape-stroke-width" type="range" min="0" max="100" step="1" value="0" name="stroke-width">
             </div>
           </div>
         </div>

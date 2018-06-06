@@ -24,12 +24,16 @@ const Animanon = (function() {
         originY: "top"
       });
 
+      path.set("data-custom-type", "shape");
+
       canvas.add(path);
     });
   });
 
   canvas.on("object:selected", function() {
-    const type = canvas.getActiveObject().get("type");
+    const currentObject = canvas.getActiveObject();
+    const type = currentObject.get("type");
+    const customType = currentObject.get("data-custom-type");
 
     $(".select-prop").each(function() {
       $(this).removeClass("active");
@@ -38,7 +42,11 @@ const Animanon = (function() {
     $("#a-select").click();
 
     if (type === "path") {
-      $(".select-prop.shape").addClass("active");
+      if (customType === "shape") {
+        $(".select-prop.shape").addClass("active");
+      } else {
+        $(".select-prop.draw").addClass("active");
+      }
     }
   });
 })();
