@@ -19,11 +19,26 @@ const Animanon = (function() {
 
       const path = new fabric.Path(shapesPath[shape], {
         fill: "#000",
+        stroke: "#000",
         originX: "left",
         originY: "top"
       });
 
       canvas.add(path);
     });
+  });
+
+  canvas.on("object:selected", function() {
+    const type = canvas.getActiveObject().get("type");
+
+    $(".select-prop").each(function() {
+      $(this).removeClass("active");
+    });
+
+    $("#a-select").click();
+
+    if (type === "path") {
+      $(".select-prop.shape").addClass("active");
+    }
   });
 })();

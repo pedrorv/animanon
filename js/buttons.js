@@ -10,6 +10,9 @@ export default canvas => {
   const openFile = $("#open");
   const drawColorInput = $("#a-draw-color");
   const drawWidthInput = $("#a-draw-width");
+  const shapeFillInput = $("#a-shape-fill");
+  const shapeStrokeInput = $("#a-shape-stroke");
+  const shapeStrokeWidthInput = $("#a-shape-stroke-width");
 
   const toolButtons = [
     drawButton,
@@ -49,6 +52,10 @@ export default canvas => {
     canvas.clear();
   };
 
+  function inputToNumber(value, minValue) {
+    return parseInt(value, 10) || (minValue || 0);
+  }
+
   drawButton.on("click", function(event) {
     canvas.isDrawingMode = true;
   });
@@ -57,7 +64,7 @@ export default canvas => {
     canvas.freeDrawingBrush.color = drawColorInput.val();
   });
   drawWidthInput.on("input", function(event) {
-    canvas.freeDrawingBrush.width = parseInt(drawWidthInput.val(), 10) || 1;
+    canvas.freeDrawingBrush.width = inputToNumber(drawWidthInput.val(), 1);
   });
 
   selectButton.on("click", function(event) {
@@ -70,6 +77,23 @@ export default canvas => {
 
   shapeButton.on("click", function(event) {
     canvas.isDrawingMode = false;
+  });
+
+  shapeFillInput.on("input", function(event) {
+    canvas.getActiveObject().set({ fill: shapeFillInput.val() });
+    canvas.renderAll();
+  });
+
+  shapeStrokeInput.on("input", function(event) {
+    canvas.getActiveObject().set({ stroke: shapeStrokeInput.val() });
+    canvas.renderAll();
+  });
+
+  shapeStrokeWidthInput.on("input", function(event) {
+    canvas
+      .getActiveObject()
+      .set({ strokeWidth: inputToNumber(shapeStrokeWidthInput.val(), 0) });
+    canvas.renderAll();
   });
 
   textAddButton.on("click", function(event) {

@@ -63,7 +63,8 @@ a.logo img {
   border: 2px solid #fff;
 }
 
-div.tool-props {
+div.tool-props,
+div.select-prop {
   display: none;
 }
 
@@ -75,6 +76,10 @@ div.tool-props.active {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+}
+
+div.select-prop.active {
+  display: block;
 }
 
 div.tool-props p {
